@@ -2,12 +2,6 @@ import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { createLogger, defineConfig } from 'vite';
 
-export default defineConfig({
-  plugins: [react()],
-  base: "https://ithanmoreira.github.io/MenteModular", // <= agrega la llave base
-});
-
-
 const configHorizonsViteErrorHandler = `
 const observer = new MutationObserver((mutations) => {
 	for (const mutation of mutations) {
@@ -139,6 +133,8 @@ window.fetch = function(...args) {
 };
 `;
 
+
+
 const addTransformIndexHtml = {
 	name: 'add-transform-index-html',
 	transformIndexHtml(html) {
@@ -189,7 +185,6 @@ logger.error = (msg, options) => {
 
 export default defineConfig({
 	customLogger: logger,
-	base: "https://ithanmoreira.github.io/MenteModular", // <= agrega la llave base
 	plugins: [react(), addTransformIndexHtml],
 	server: {
 		cors: true,
