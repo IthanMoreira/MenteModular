@@ -33,7 +33,7 @@ import React from 'react';
       const activeNavLinkClasses = "bg-primary/10 text-primary";
       const inactiveNavLinkClasses = "hover:bg-muted hover:text-accent-foreground text-gray-300 hover:text-white";
 
-      const mostrarServicios = false;
+      const mostrarServicios = true;
       const mostrarProducto = false; // oculto
       const mostrarBlog = false;     // oculto
       const mostrarContacto = false;
@@ -62,21 +62,21 @@ import React from 'react';
                   >
                     <Settings className="mr-1.5 h-4 w-4" /> Servicios
                   </NavLink>)}
-                  {mostrarServicios && (
+                  {mostrarProducto && (
                   <NavLink 
                     to="/product" 
                     className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : inactiveNavLinkClasses}`}
                   >
                     <Package className="mr-1.5 h-4 w-4" /> DataInsightsPyME
                   </NavLink>)}
-                  {mostrarServicios && (
+                  {mostrarBlog && (
                   <NavLink 
                     to="/blog" 
                     className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : inactiveNavLinkClasses}`}
                   >
                     <BookOpen className="mr-1.5 h-4 w-4" /> Blog
                   </NavLink>)}
-                  {mostrarServicios && (
+                  {mostrarContacto && (
                   <NavLink 
                     to="/contact" 
                     className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : inactiveNavLinkClasses}`}
@@ -97,13 +97,13 @@ import React from 'react';
                       </Button>
                     </>
                   ) : (
-                    
+                    mostrarAdmin && (
                     <NavLink 
                       to="/admin-login" 
                       className={({ isActive }) => `${navLinkClasses} ${isActive ? activeNavLinkClasses : inactiveNavLinkClasses}`}
                     >
-                       <LogIn className="mr-1.5 h-4 w-4" /> Admin
-                    </NavLink>
+                       <LogIn className="mr-1.5 h-4 w-4" /> Inicia sesión
+                    </NavLink>)
                   )}
                 </div>
               </nav>

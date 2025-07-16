@@ -91,7 +91,7 @@ import React, { useState } from 'react';
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              Impulsamos tu Negocio al siguiente nivel
+              Impulsamos tu negocio al siguiente nivel
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto"
@@ -107,8 +107,8 @@ import React, { useState } from 'react';
               transition={{ duration: 0.6, delay: 0.5 }}
               className="flex flex-col sm:flex-row justify-center items-center gap-4"
             >
-              <Button size="lg" className={`text-lg px-8 py-6 ${buttonPrimaryClass}`} onClick={handleFreeAssessment}>
-                Solicita una Asesoría Gratuita <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className={`text-lg px-8 py-6 ${buttonPrimaryClass}`} asChild /*onClick={handleFreeAssessment} */>
+                <Link to="/contact">Solicita una Asesoría Gratuita<ArrowRight className="h-5 w-5" /></Link>
               </Button>
               <Button size="lg" variant="outline" className={`text-lg px-8 py-6 ${buttonSecondaryClass} border-slate-600`} asChild>
                 <Link to="/services">Conoce Nuestros Servicios</Link>
