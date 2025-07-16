@@ -186,7 +186,7 @@ logger.error = (msg, options) => {
 export default defineConfig({
 	customLogger: logger,
 	plugins: [react(), addTransformIndexHtml],
-	base:"/MenteModular/",
+	base:"/",
 	server: {
 		cors: true,
 		headers: {
