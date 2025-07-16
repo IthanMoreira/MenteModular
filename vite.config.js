@@ -4,8 +4,7 @@ import {defineConfig } from 'vite';
 
 
 export default defineConfig({
-	customLogger: logger,
-	plugins: [react(), addTransformIndexHtml],
+	plugins: [react()],
 	base:"/MenteModular/",
 	server: {
 		cors: true,
