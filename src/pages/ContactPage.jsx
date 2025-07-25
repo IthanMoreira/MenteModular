@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-    import { motion } from 'framer-motion';
-    import { Button } from '@/components/ui/button';
-    import { Input } from '@/components/ui/input';
-    import { Label } from '@/components/ui/label';
-    import { Textarea } from '@/components/ui/textarea';
-    import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-    import { useToast } from '@/components/ui/use-toast';
-    import { Send, User, Briefcase, Mail as MailIcon, Phone, MessageSquare } from 'lucide-react';
-
+import { motion } from 'framer-motion';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { useToast } from '@/components/ui/use-toast';
+import { Send, User, Briefcase, Mail as MailIcon, Phone, MessageSquare } from 'lucide-react';
+    
     const ContactPage = () => {
       const [formData, setFormData] = useState({
         name: '',
@@ -45,7 +45,7 @@ import React, { useState } from 'react';
         return Object.keys(newErrors).length === 0;
       };
 
-      const handleSubmit = (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validateForm()) {
           toast({
@@ -56,12 +56,33 @@ import React, { useState } from 'react';
           return;
         }
 
-        console.log('Datos del formulario de contacto:', formData);
-        toast({
-          title: '¡Consulta Enviada Exitosamente!',
-          description: 'Gracias por ponerte en contacto con PyMEImpulso. Te responderemos a la brevedad. (Simulación)',
-        });
-        setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+        try {
+          const response = await fetch("https://formspree.io/f/movldnel", { // <- tu endpoint real
+            method: "POST",
+            headers: { "Accept": "application/json" },
+            body: JSON.stringify(formData),
+          });
+
+          if (response.ok) {
+            toast({
+              title: '¡Consulta Enviada Exitosamente!',
+              description: 'Gracias por ponerte en contacto. Te responderemos a la brevedad.',
+            });
+            setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+          } else {
+            toast({
+              title: 'Error al enviar',
+              description: 'No se pudo enviar el formulario. Intenta nuevamente.',
+              variant: 'destructive',
+            });
+          }
+        } catch (error) {
+          toast({
+            title: 'Error de conexión',
+            description: 'Ocurrió un problema al conectar con el servidor.',
+            variant: 'destructive',
+          });
+        }
       };
 
       const inputFieldClass = "bg-slate-800 border-slate-700 placeholder-slate-400 text-white focus:ring-primary focus:border-primary";

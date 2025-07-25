@@ -158,8 +158,13 @@ import React, { useState } from 'react';
               </motion.div>
           </section>
           
-          {/* Email Capture Section */}
-          <section className="max-w-2xl mx-auto text-center space-y-6 py-12 bg-slate-800/50 rounded-xl p-8 md:p-12 shadow-2xl border border-slate-700">
+          {/* Email Capture Section 
+          
+          OCULTA FUTURO RECORDAR
+
+
+          */}
+          <section className="hidden max-w-2xl mx-auto text-center space-y-6 py-12 bg-slate-800/50 rounded-xl p-8 md:p-12 shadow-2xl border border-slate-700">
             <motion.h2 
               className="text-3xl font-bold text-white"
               initial={{ opacity: 0, y: 20 }}
@@ -201,8 +206,12 @@ import React, { useState } from 'react';
             </motion.form>
           </section>
 
-          {/* Call to Action for Product */}
-          <section className="text-center space-y-6 py-12">
+          {/* Call to Action for Product 
+          
+          OCULTO PRODUCTO 
+          
+          */}
+          <section className="hidden text-center space-y-6 py-12">
              <motion.div
                 className="max-w-3xl mx-auto bg-gradient-to-r from-purple-600 via-primary to-pink-600 p-8 md:p-12 rounded-xl shadow-2xl"
                 initial={{ opacity: 0, y: 50, scale: 0.95 }}

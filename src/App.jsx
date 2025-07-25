@@ -36,7 +36,7 @@ import React from 'react';
       const mostrarServicios = true;
       const mostrarProducto = false; // oculto
       const mostrarBlog = false;     // oculto
-      const mostrarContacto = false;
+      const mostrarContacto = true;
       const mostrarAdmin = false;
 
       return (

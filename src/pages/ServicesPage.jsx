@@ -169,7 +169,7 @@ import React from 'react';
             <Card className="max-w-3xl mx-auto bg-gradient-to-br from-primary/80 via-purple-600/80 to-pink-600/80 p-8 md:p-12 rounded-xl shadow-2xl border-none">
                 <CardHeader>
                     <BarChartHorizontalBig className="h-16 w-16 text-white mx-auto mb-4" />
-                    <CardTitle className="text-4xl font-bold text-white">¿Listo para Transformar tu PyME?</CardTitle>
+                    <CardTitle className="text-4xl font-bold text-white">¿Listo para Transformar tu Empresa?</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <CardDescription className="text-xl text-purple-200 mb-8">
